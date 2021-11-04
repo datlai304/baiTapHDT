@@ -7,6 +7,11 @@ public class QuanLyTestDrive {
 
         DanhSachQuanLi dsql = new DanhSachQuanLi();
         int num = 0;
+        System.out.print("Họ và tên:  ");
+        String ten = sc.nextLine();
+        System.out.print("Dịa chỉ: ");
+        String diaChi = sc.nextLine();
+        Nguoi ng = new Nguoi(ten, diaChi);
         do {
             System.out.println("1. Thêm học viên");
             System.out.println("2. Thêm nhân viên");
@@ -18,30 +23,20 @@ public class QuanLyTestDrive {
             switch (num) {
                 case 1  : sc.nextLine();
                             System.out.println("Thêm một học viên");
-                            System.out.println("Nhập tên học viên: ");
-                            String ten = sc.nextLine();
-                            System.out.println("Nhập địa chỉ: ");
-                            String diaChi = sc.nextLine();
+                           
                             System.out.println("điểm môn học 1: ");
                             float diem1 = sc.nextFloat();
                             System.out.println("điểm môn học 2: ");
-                            float diem2 = sc.nextFloat();
-                            HocVien ng = new HocVien(diem1, diem2);
-                            float diem = ng.getDiemTB();
-                            HocVien hv1 = new HocVien(ten, diaChi, diem);
+                            float diem2 = sc.nextFloat();;
+                            HocVien hv1 = new HocVien(ten, diaChi, diem1, diem2);
                             dsql.themNguoi(hv1);
                             break;
                 case 2  :   sc.nextLine();
-                            System.out.println("Thêm một nhân viên");
-                            System.out.println("Nhập tên nhân viên: ");
-                            String tenNhanVien = sc.nextLine();
-                            System.out.println("Nhập địa chỉ: ");
-                            String diaChiNhanVien = sc.nextLine();
                             System.out.println("Nhập hệ số lương ");
                             float a = sc.nextFloat();
                             NhanVien nv = new NhanVien(a);
                             float luong = nv.setTinhLuong();
-                            NhanVien nv1 = new NhanVien(tenNhanVien, diaChiNhanVien, luong);
+                            NhanVien nv1 = new NhanVien(ten, diaChi, luong);
                             dsql.themNguoi(nv1);
                             break;
                 case 3 :   sc.nextLine();
@@ -50,7 +45,7 @@ public class QuanLyTestDrive {
                             String tenCongTy = sc.nextLine();
                             System.out.println("Nhập gia tri hoá đơn: ");
                             double giaTriHoaDon = sc.nextDouble();
-                            KhachHang kh = new KhachHang(tenCongTy, giaTriHoaDon);
+                            KhachHang kh = new KhachHang(ten,diaChi,tenCongTy, giaTriHoaDon);
                             dsql.themNguoi(kh);
                             break;
                 case 4  :   dsql.inDanhSachQuanLi();

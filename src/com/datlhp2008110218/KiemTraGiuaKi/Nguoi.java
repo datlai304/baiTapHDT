@@ -14,6 +14,6 @@ public class Nguoi {
 
     @Override
     public String toString() {
-        return "Họ tên: " + hoTen + "Địa Chỉ:  " + diaChi;
+        return "Họ tên: " + hoTen + " Địa Chỉ:  " + diaChi;
     }
 }

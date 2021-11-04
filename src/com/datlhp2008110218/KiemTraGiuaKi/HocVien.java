@@ -20,9 +20,8 @@ public class HocVien extends Nguoi {
         this.diemMonHoc2 = diemMonHoc2;
     }
 
-    HocVien(String ten, String diaChi, float diemTB){
-        this.tenHocVien = ten;
-        this.diaChiHocVien = diaChi;
+    HocVien(String hoTen, String diaChi, float diemTB){
+        super(hoTen, diaChi);
         this.diemTB = diemTB;
     }
     public String getTenHocVien() {
@@ -59,7 +58,6 @@ public class HocVien extends Nguoi {
 
     @Override
     public String toString() {
-        return "Tên học viên: " + getTenHocVien() + " Địa chỉ học viên: " + getDiaChiHocVien() +
-        " Điểm trung bình của học viên: " + diemTB;
+        return super.toString() + "Điểm trung bình: " + getDiemTB();
     }
 }

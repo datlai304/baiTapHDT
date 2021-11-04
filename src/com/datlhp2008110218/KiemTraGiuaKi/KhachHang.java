@@ -4,7 +4,8 @@ public class KhachHang extends Nguoi{
     private String tenCongTy;
     private double giaTriHoaDon;
     
-    KhachHang(String tenCongTy, Double giaTriHoaDon){
+    KhachHang(String ten, String diaChi, String tenCongTy, Double giaTriHoaDon){
+        super(ten, diaChi);
         this.tenCongTy = tenCongTy;
         this.giaTriHoaDon = giaTriHoaDon;
     };
@@ -18,6 +19,6 @@ public class KhachHang extends Nguoi{
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return "Tên Công ty: " + getTenCongTy() +" Hóa đơn của khách hàng: " + getGiaTriHoaDon() +" VNĐ";
+        return super.toString() + " Tên công ty " + getTenCongTy() + " Giá trị hóa đơn" + getGiaTriHoaDon();
     }
 }

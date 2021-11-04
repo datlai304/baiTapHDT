@@ -12,12 +12,14 @@ public class NhanVien extends Nguoi{
     }
 
     NhanVien(String hoTen, String diaChi, float heSoLuong){
-        this.tenNhanVien = hoTen;
-        this.diaChiNhanVien = diaChi;
+        super(hoTen, diaChi);
         this.heSoLuong = heSoLuong;
     }
 
 
+    public float getHeSoLuong() {
+        return heSoLuong;
+    }
     private float getTinhHeSoLuong(){
         luong = (heSoLuong * 1500000);
         return luong;
@@ -41,7 +43,6 @@ public class NhanVien extends Nguoi{
 
     @Override
     public String toString() {
-        return "Tên nhân viên: " + getTenNhanVien() + " Địa chỉ nhân viên: " + getTenNhanVien() +
-        " Lương của nhân viên: " + setTinhLuong();
+        return super.toString() + "Lương: " + getHeSoLuong() +" VNĐ";
     }
 }
